@@ -41,7 +41,7 @@ export default function RegisterPage() {
             <div className="w-full max-w-md bg-white dark:bg-neutral-800 rounded-2xl shadow-xl p-8 transition-colors">
 
                 <div className="flex justify-center mb-6">
-                    <Logo iconSize={32} />
+                    <Logo className="w-10 h-10" />
                 </div>
 
                 <div className="text-center mb-8">
