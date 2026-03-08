@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-sm text-neutral-600 dark:text-gray-300 antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-2xl font-semibold text-gray-800 dark:text-ivory tracking-tight;
+    }
+}
