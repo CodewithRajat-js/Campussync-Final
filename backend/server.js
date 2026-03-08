@@ -25,8 +25,22 @@ app.use((req, res, next) => {
     next();
 });
 
+const allowedOrigins = [
+    "http://localhost:5174",
+    "http://localhost:5173",
+    process.env.FRONTEND_URL
+];
+
 app.use(cors({
-    origin: "*",
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true);
+
+        if (allowedOrigins.indexOf(origin) !== -1) {
+            return callback(null, true);
+        }
+
+        return callback(new Error("CORS not allowed"));
+    },
     credentials: true
 }));
 app.use(express.json());
